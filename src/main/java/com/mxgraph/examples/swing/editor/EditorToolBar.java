@@ -1,4 +1,4 @@
-package www.wcy.wat.dsk.demos.swing.editor;
+package com.mxgraph.examples.swing.editor;
 
 import java.awt.Dimension;
 import java.awt.GraphicsEnvironment;
@@ -14,15 +14,14 @@ import javax.swing.JOptionPane;
 import javax.swing.JToolBar;
 import javax.swing.TransferHandler;
 
-import www.wcy.wat.dsk.demos.swing.editor.EditorActions.ColorAction;
-import www.wcy.wat.dsk.demos.swing.editor.EditorActions.FontStyleAction;
-import www.wcy.wat.dsk.demos.swing.editor.EditorActions.HistoryAction;
-import www.wcy.wat.dsk.demos.swing.editor.EditorActions.KeyValueAction;
-import www.wcy.wat.dsk.demos.swing.editor.EditorActions.NewAction;
-import www.wcy.wat.dsk.demos.swing.editor.EditorActions.OpenAction;
-import www.wcy.wat.dsk.demos.swing.editor.EditorActions.PrintAction;
-import www.wcy.wat.dsk.demos.swing.editor.EditorActions.SaveAction;
-
+import com.mxgraph.examples.swing.editor.EditorActions.ColorAction;
+import com.mxgraph.examples.swing.editor.EditorActions.FontStyleAction;
+import com.mxgraph.examples.swing.editor.EditorActions.HistoryAction;
+import com.mxgraph.examples.swing.editor.EditorActions.KeyValueAction;
+import com.mxgraph.examples.swing.editor.EditorActions.NewAction;
+import com.mxgraph.examples.swing.editor.EditorActions.OpenAction;
+import com.mxgraph.examples.swing.editor.EditorActions.PrintAction;
+import com.mxgraph.examples.swing.editor.EditorActions.SaveAction;
 import com.mxgraph.swing.mxGraphComponent;
 import com.mxgraph.swing.util.mxGraphActions;
 import com.mxgraph.util.mxConstants;

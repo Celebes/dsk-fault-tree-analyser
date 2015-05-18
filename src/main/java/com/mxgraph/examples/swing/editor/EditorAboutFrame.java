@@ -1,4 +1,4 @@
-package www.wcy.wat.dsk.demos.swing.editor;
+package com.mxgraph.examples.swing.editor;
 
 import java.awt.BorderLayout;
 import java.awt.Color;

@@ -6,7 +6,7 @@
  * See LICENSE file for license details. If you are unable to locate
  * this file please contact info (at) jgraph (dot) com.
  */
-package www.wcy.wat.dsk.demos.swing.editor;
+package com.mxgraph.examples.swing.editor;
 
 import java.io.File;
 

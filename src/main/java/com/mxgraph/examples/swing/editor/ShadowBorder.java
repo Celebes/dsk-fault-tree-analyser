@@ -8,7 +8,7 @@
  * installation directory. If you are unable to locate this file please
  * contact JGraph sales for another copy.
  */
-package www.wcy.wat.dsk.demos.swing.editor;
+package com.mxgraph.examples.swing.editor;
 
 import java.awt.Color;
 import java.awt.Component;

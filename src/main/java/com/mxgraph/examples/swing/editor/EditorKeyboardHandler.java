@@ -1,7 +1,7 @@
 /**
  * Copyright (c) 2008, Gaudenz Alder
  */
-package www.wcy.wat.dsk.demos.swing.editor;
+package com.mxgraph.examples.swing.editor;
 
 import javax.swing.ActionMap;
 import javax.swing.InputMap;

@@ -1,4 +1,4 @@
-package www.wcy.wat.dsk.demos.swing;
+package com.mxgraph.examples.swing;
 
 import java.util.Map;
 

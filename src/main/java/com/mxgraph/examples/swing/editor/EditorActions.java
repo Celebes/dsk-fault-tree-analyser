@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2001-2012, JGraph Ltd
  */
-package www.wcy.wat.dsk.demos.swing.editor;
+package com.mxgraph.examples.swing.editor;
 
 import java.awt.Color;
 import java.awt.Component;

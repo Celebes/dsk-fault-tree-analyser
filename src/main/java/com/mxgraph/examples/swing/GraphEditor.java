@@ -1,6 +1,6 @@
 /**
  * Copyright (c) 2006-2012, JGraph Ltd */
-package www.wcy.wat.dsk.demos.swing;
+package com.mxgraph.examples.swing;
 
 import java.awt.Color;
 import java.awt.Point;
@@ -8,16 +8,14 @@ import java.net.URL;
 import java.text.NumberFormat;
 import java.util.Iterator;
 import java.util.List;
-
 import javax.swing.ImageIcon;
 import javax.swing.UIManager;
 
 import org.w3c.dom.Document;
 
-import www.wcy.wat.dsk.demos.swing.editor.BasicGraphEditor;
-import www.wcy.wat.dsk.demos.swing.editor.EditorMenuBar;
-import www.wcy.wat.dsk.demos.swing.editor.EditorPalette;
-
+import com.mxgraph.examples.swing.editor.BasicGraphEditor;
+import com.mxgraph.examples.swing.editor.EditorMenuBar;
+import com.mxgraph.examples.swing.editor.EditorPalette;
 import com.mxgraph.io.mxCodec;
 import com.mxgraph.model.mxCell;
 import com.mxgraph.model.mxGeometry;
@@ -466,7 +464,7 @@ public class GraphEditor extends BasicGraphEditor
 			// Loads the defalt stylesheet from an external file
 			mxCodec codec = new mxCodec();
 			Document doc = mxUtils.loadDocument(GraphEditor.class.getResource(
-					"/www/wcy/wat/dsk/demos/swing/resources/default-style.xml")
+					"/com/mxgraph/examples/swing/resources/default-style.xml")
 					.toString());
 			codec.decode(doc.getDocumentElement(), graph.getStylesheet());
 

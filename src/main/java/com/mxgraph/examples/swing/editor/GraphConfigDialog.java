@@ -2,7 +2,7 @@
  * Copyright (c) 2012, JGraph Ltd
  */
 
-package www.wcy.wat.dsk.demos.swing.editor;
+package com.mxgraph.examples.swing.editor;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -1060,7 +1060,6 @@ public class GraphConfigDialog extends JDialog
 
 						mxTraversal.bfs(aGraph, startVertex, new mxICellVisitor()
 						{
-							
 							// simple visitor that prints current vertex
 							public boolean visit(Object vertex, Object edge)
 							{
@@ -1090,7 +1089,6 @@ public class GraphConfigDialog extends JDialog
 
 						mxTraversal.dfs(aGraph, startVertex, new mxICellVisitor()
 						{
-							
 							// simple visitor that prints current vertex
 							public boolean visit(Object vertex, Object edge)
 							{
@@ -1120,7 +1118,6 @@ public class GraphConfigDialog extends JDialog
 
 						mxTraversal.bfs(aGraph, startVertex, new mxICellVisitor()
 						{
-							
 							// simple visitor that prints current vertex
 							public boolean visit(Object vertex, Object edge)
 							{
@@ -1150,7 +1147,6 @@ public class GraphConfigDialog extends JDialog
 
 						mxTraversal.dfs(aGraph, startVertex, new mxICellVisitor()
 						{
-							
 							// simple visitor that prints current vertex
 							public boolean visit(Object vertex, Object edge)
 							{
@@ -1272,7 +1268,6 @@ public class GraphConfigDialog extends JDialog
 						{
 							mxTraversal.dijkstra(aGraph, startVertex, endVertex, new mxICellVisitor()
 							{
-								
 								// simple visitor that prints current vertex
 								public boolean visit(Object vertex, Object edge)
 								{

@@ -1,7 +1,7 @@
 /**
  * Copyright (c) 2007-2012, JGraph Ltd
  */
-package www.wcy.wat.dsk.demos.swing;
+package com.mxgraph.examples.swing;
 
 import java.util.EventObject;
 
