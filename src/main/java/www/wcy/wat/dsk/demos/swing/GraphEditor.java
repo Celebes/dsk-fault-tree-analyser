@@ -8,14 +8,16 @@ import java.net.URL;
 import java.text.NumberFormat;
 import java.util.Iterator;
 import java.util.List;
+
 import javax.swing.ImageIcon;
 import javax.swing.UIManager;
 
 import org.w3c.dom.Document;
 
-import com.mxgraph.examples.swing.editor.BasicGraphEditor;
-import com.mxgraph.examples.swing.editor.EditorMenuBar;
-import com.mxgraph.examples.swing.editor.EditorPalette;
+import www.wcy.wat.dsk.demos.swing.editor.BasicGraphEditor;
+import www.wcy.wat.dsk.demos.swing.editor.EditorMenuBar;
+import www.wcy.wat.dsk.demos.swing.editor.EditorPalette;
+
 import com.mxgraph.io.mxCodec;
 import com.mxgraph.model.mxCell;
 import com.mxgraph.model.mxGeometry;
@@ -44,7 +46,7 @@ public class GraphEditor extends BasicGraphEditor
 	/**
 	 * Holds the shared number formatter.
 	 * 
-	 * @see java.text.NumberFormat#getInstance()
+	 * @see NumberFormat#getInstance()
 	 */
 	public static final NumberFormat numberFormat = NumberFormat.getInstance();
 

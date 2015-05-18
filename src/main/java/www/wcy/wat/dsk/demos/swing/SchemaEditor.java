@@ -6,11 +6,12 @@ import javax.swing.ImageIcon;
 import javax.swing.JToolBar;
 import javax.swing.UIManager;
 
-import com.mxgraph.examples.swing.editor.BasicGraphEditor;
-import com.mxgraph.examples.swing.editor.EditorPalette;
-import com.mxgraph.examples.swing.editor.SchemaEditorMenuBar;
-import com.mxgraph.examples.swing.editor.SchemaEditorToolBar;
-import com.mxgraph.examples.swing.editor.SchemaGraphComponent;
+import www.wcy.wat.dsk.demos.swing.editor.BasicGraphEditor;
+import www.wcy.wat.dsk.demos.swing.editor.EditorPalette;
+import www.wcy.wat.dsk.demos.swing.editor.SchemaEditorMenuBar;
+import www.wcy.wat.dsk.demos.swing.editor.SchemaEditorToolBar;
+import www.wcy.wat.dsk.demos.swing.editor.SchemaGraphComponent;
+
 import com.mxgraph.model.mxCell;
 import com.mxgraph.model.mxGeometry;
 import com.mxgraph.util.mxRectangle;

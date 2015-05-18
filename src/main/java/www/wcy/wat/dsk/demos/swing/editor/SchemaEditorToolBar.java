@@ -10,11 +10,12 @@ import javax.swing.JOptionPane;
 import javax.swing.JToolBar;
 import javax.swing.TransferHandler;
 
-import com.mxgraph.examples.swing.editor.EditorActions.HistoryAction;
-import com.mxgraph.examples.swing.editor.EditorActions.NewAction;
-import com.mxgraph.examples.swing.editor.EditorActions.OpenAction;
-import com.mxgraph.examples.swing.editor.EditorActions.PrintAction;
-import com.mxgraph.examples.swing.editor.EditorActions.SaveAction;
+import www.wcy.wat.dsk.demos.swing.editor.EditorActions.HistoryAction;
+import www.wcy.wat.dsk.demos.swing.editor.EditorActions.NewAction;
+import www.wcy.wat.dsk.demos.swing.editor.EditorActions.OpenAction;
+import www.wcy.wat.dsk.demos.swing.editor.EditorActions.PrintAction;
+import www.wcy.wat.dsk.demos.swing.editor.EditorActions.SaveAction;
+
 import com.mxgraph.swing.mxGraphComponent;
 import com.mxgraph.swing.util.mxGraphActions;
 import com.mxgraph.util.mxEvent;

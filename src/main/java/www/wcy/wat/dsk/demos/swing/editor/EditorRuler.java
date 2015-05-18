@@ -76,7 +76,7 @@ public class EditorRuler extends JComponent implements MouseMotionListener,
 	/**
 	 * Holds the shared number formatter.
 	 * 
-	 * @see java.text.NumberFormat#getInstance()
+	 * @see NumberFormat#getInstance()
 	 */
 	public static final NumberFormat numberFormat = NumberFormat.getInstance();
 

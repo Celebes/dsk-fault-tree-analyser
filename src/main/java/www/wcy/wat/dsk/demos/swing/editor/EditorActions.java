@@ -1628,7 +1628,7 @@ public class EditorActions
 		}
 
 		/**
-		 * @throws java.io.IOException
+		 * @throws IOException
 		 *
 		 */
 		protected void openGD(BasicGraphEditor editor, File file,

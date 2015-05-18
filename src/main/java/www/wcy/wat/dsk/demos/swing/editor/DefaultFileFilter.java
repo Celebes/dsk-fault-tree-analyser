@@ -15,7 +15,7 @@ import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileFilter;
 
 /**
- * Filter for use in a {@link javax.swing.JFileChooser}.
+ * Filter for use in a {@link JFileChooser}.
  */
 public class DefaultFileFilter extends FileFilter
 {
@@ -91,7 +91,7 @@ public class DefaultFileFilter extends FileFilter
 	/**
 	 * Utility file filter to accept all image formats supported by image io.
 	 * 
-	 * @see javax.imageio.ImageIO#getReaderFormatNames()
+	 * @see ImageIO#getReaderFormatNames()
 	 */
 	public static class ImageFileFilter extends FileFilter
 	{
@@ -162,7 +162,7 @@ public class DefaultFileFilter extends FileFilter
 	 * Utility file filter to accept editor files, namely .xml and .xml.gz
 	 * extensions.
 	 * 
-	 * @see javax.imageio.ImageIO#getReaderFormatNames()
+	 * @see ImageIO#getReaderFormatNames()
 	 */
 	public static class EditorFileFilter extends FileFilter
 	{

@@ -151,7 +151,7 @@ public class EditorAboutFrame extends JDialog
 	}
 
 	/**
-	 * Overrides {@link javax.swing.JDialog#createRootPane()} to return a root pane that
+	 * Overrides {@link JDialog#createRootPane()} to return a root pane that
 	 * hides the window when the user presses the ESCAPE key.O
 	 */
 	protected JRootPane createRootPane()

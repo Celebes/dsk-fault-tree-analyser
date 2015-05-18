@@ -358,7 +358,7 @@ public class EditorPalette extends JPanel
 	/**
 	 * @param eventName
 	 * @param listener
-	 * @see com.mxgraph.util.mxEventSource#addListener(String, com.mxgraph.util.mxEventSource.mxIEventListener)
+	 * @see com.mxgraph.util.mxEventSource#addListener(java.lang.String, com.mxgraph.util.mxEventSource.mxIEventListener)
 	 */
 	public void addListener(String eventName, mxIEventListener listener)
 	{
@@ -386,7 +386,7 @@ public class EditorPalette extends JPanel
 	/**
 	 * @param eventName
 	 * @param listener
-	 * @see com.mxgraph.util.mxEventSource#removeListener(String, com.mxgraph.util.mxEventSource.mxIEventListener)
+	 * @see com.mxgraph.util.mxEventSource#removeListener(java.lang.String, com.mxgraph.util.mxEventSource.mxIEventListener)
 	 */
 	public void removeListener(mxIEventListener listener, String eventName)
 	{
