@@ -73,6 +73,17 @@ public class GraphEditor extends BasicGraphEditor
 		EditorPalette shapesPalette = insertPalette(mxResources.get("shapes"));
 		EditorPalette imagesPalette = insertPalette(mxResources.get("images"));
 		EditorPalette symbolsPalette = insertPalette(mxResources.get("symbols"));
+		EditorPalette gatesPalette = insertPalette(mxResources.get("gates"));
+		
+		// bramki
+		gatesPalette
+				.addTemplate(
+						"AND",
+						new ImageIcon(
+								GraphEditor.class
+										.getResource("/com/mxgraph/examples/swing/images/gate-and.png")),
+						"image;image=/com/mxgraph/examples/swing/images/gate-and.png",
+						50, 50, "AND");
 
 		// Sets the edge template to be used for creating new edges if an edge
 		// is clicked in the shape palette
