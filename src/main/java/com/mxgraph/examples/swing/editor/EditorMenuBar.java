@@ -14,6 +14,10 @@ import javax.swing.SwingUtilities;
 import javax.swing.TransferHandler;
 import javax.swing.UIManager;
 
+import www.wcy.wat.dsk.core.FTAnalyzer;
+import www.wcy.wat.dsk.core.JDialogHelper;
+import www.wcy.wat.dsk.core.TitleType;
+
 import com.mxgraph.analysis.StructuralException;
 import com.mxgraph.analysis.mxGraphProperties.GraphType;
 import com.mxgraph.analysis.mxAnalysisGraph;
@@ -76,7 +80,7 @@ public class EditorMenuBar extends JMenuBar
 
 	public enum AnalyzeType
 	{
-		IS_CONNECTED, IS_SIMPLE, IS_CYCLIC_DIRECTED, IS_CYCLIC_UNDIRECTED, COMPLEMENTARY, REGULARITY, COMPONENTS, MAKE_CONNECTED, MAKE_SIMPLE, IS_TREE, ONE_SPANNING_TREE, IS_DIRECTED, GET_CUT_VERTEXES, GET_CUT_EDGES, GET_SOURCES, GET_SINKS, PLANARITY, IS_BICONNECTED, GET_BICONNECTED, SPANNING_TREE, FLOYD_ROY_WARSHALL
+		FTA, IS_CONNECTED, IS_SIMPLE, IS_CYCLIC_DIRECTED, IS_CYCLIC_UNDIRECTED, COMPLEMENTARY, REGULARITY, COMPONENTS, MAKE_CONNECTED, MAKE_SIMPLE, IS_TREE, ONE_SPANNING_TREE, IS_DIRECTED, GET_CUT_VERTEXES, GET_CUT_EDGES, GET_SOURCES, GET_SINKS, PLANARITY, IS_BICONNECTED, GET_BICONNECTED, SPANNING_TREE, FLOYD_ROY_WARSHALL
 	}
 
 	public EditorMenuBar(final BasicGraphEditor editor)
@@ -470,7 +474,8 @@ public class EditorMenuBar extends JMenuBar
 		menu.add(editor.bind("Reset Style", new InsertGraph(GraphType.RESET_STYLE, aGraph)));
 
 		menu = add(new JMenu("Analyze"));
-		menu.add(editor.bind("Is Connected", new AnalyzeGraph(AnalyzeType.IS_CONNECTED, aGraph)));
+		menu.add(editor.bind("Analiza Drzewa B³êdów", new AnalyzeGraph(AnalyzeType.FTA, aGraph)));
+		/*menu.add(editor.bind("Is Connected", new AnalyzeGraph(AnalyzeType.IS_CONNECTED, aGraph)));
 		menu.add(editor.bind("Is Simple", new AnalyzeGraph(AnalyzeType.IS_SIMPLE, aGraph)));
 		menu.add(editor.bind("Is Directed Cyclic", new AnalyzeGraph(AnalyzeType.IS_CYCLIC_DIRECTED, aGraph)));
 		menu.add(editor.bind("Is Undirected Cyclic", new AnalyzeGraph(AnalyzeType.IS_CYCLIC_UNDIRECTED, aGraph)));
@@ -497,7 +502,8 @@ public class EditorMenuBar extends JMenuBar
 		menu.add(editor.bind("Get cut edges", new AnalyzeGraph(AnalyzeType.GET_CUT_EDGES, aGraph)));
 		menu.add(editor.bind("Get sources", new AnalyzeGraph(AnalyzeType.GET_SOURCES, aGraph)));
 		menu.add(editor.bind("Get sinks", new AnalyzeGraph(AnalyzeType.GET_SINKS, aGraph)));
-		menu.add(editor.bind("Is biconnected", new AnalyzeGraph(AnalyzeType.IS_BICONNECTED, aGraph)));
+		menu.add(editor.bind("Is biconnected", new AnalyzeGraph(AnalyzeType.IS_BICONNECTED, aGraph)));*/
+		
 
 		// Creates the help menu
 		menu = add(new JMenu(mxResources.get("help")));
@@ -912,8 +918,18 @@ public class EditorMenuBar extends JMenuBar
 				mxGraphComponent graphComponent = (mxGraphComponent) e.getSource();
 				mxGraph graph = graphComponent.getGraph();
 				aGraph.setGraph(graph);
-
-				if (analyzeType == AnalyzeType.IS_CONNECTED)
+				
+				if (analyzeType == AnalyzeType.FTA) {
+					// sprawdz czy jest drzewem - jak nie jest, wywal blad
+					boolean isTree = mxGraphStructure.isTree(aGraph);
+					
+					if(isTree == false) {
+						JDialogHelper.showDialog(TitleType.ERROR, "Podany graf nie jest drzewem!");
+						return;
+					}
+					
+					System.out.println("Siema ema ero eto " + FTAnalyzer.analyzeFTA(aGraph));
+				} else if (analyzeType == AnalyzeType.IS_CONNECTED)
 				{
 					boolean isConnected = mxGraphStructure.isConnected(aGraph);
 
