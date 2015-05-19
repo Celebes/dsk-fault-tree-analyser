@@ -75,6 +75,18 @@ public class GraphEditor extends BasicGraphEditor
 		EditorPalette transferPalette = insertPalette(mxResources.get("transferPalette"));
 		
 		/*
+		 * LISTENERY
+		 */
+		
+		gatesPalette.addListener(mxEvent.SELECT, new mxIEventListener() {
+			
+			public void invoke(Object sender, mxEventObject evt) {
+				System.out.println("Wybrano bramkê " + sender);
+			}
+			
+		});
+		
+		/*
 		 * ZDARZENIA
 		 */
 		
