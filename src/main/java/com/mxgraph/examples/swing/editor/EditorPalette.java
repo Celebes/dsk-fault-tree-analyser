@@ -26,6 +26,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.TransferHandler;
 
+import www.wcy.wat.dsk.components.sources.FtaNodeType;
+
 import com.mxgraph.model.mxCell;
 import com.mxgraph.model.mxGeometry;
 import com.mxgraph.swing.util.mxGraphTransferable;
@@ -33,9 +35,9 @@ import com.mxgraph.swing.util.mxSwingConstants;
 import com.mxgraph.util.mxEvent;
 import com.mxgraph.util.mxEventObject;
 import com.mxgraph.util.mxEventSource;
+import com.mxgraph.util.mxEventSource.mxIEventListener;
 import com.mxgraph.util.mxPoint;
 import com.mxgraph.util.mxRectangle;
-import com.mxgraph.util.mxEventSource.mxIEventListener;
 
 public class EditorPalette extends JPanel
 {
@@ -244,10 +246,19 @@ public class EditorPalette extends JPanel
 	 * @param value
 	 */
 	public void addTemplate(final String name, ImageIcon icon, String style,
-			int width, int height, Object value)
+			int width, int height, Object value, FtaNodeType ftaNodeType)
 	{
 		mxCell cell = new mxCell(value, new mxGeometry(0, 0, width, height),
 				style);
+		
+		if(ftaNodeType == FtaNodeType.EVENT) {
+			
+		} else if(ftaNodeType == FtaNodeType.GATE) {
+			
+		} else if(ftaNodeType == FtaNodeType.TRANSFER) {
+			
+		}
+		
 		cell.setVertex(true);
 
 		addTemplate(name, icon, cell);

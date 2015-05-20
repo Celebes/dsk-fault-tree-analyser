@@ -8,10 +8,13 @@ import java.net.URL;
 import java.text.NumberFormat;
 import java.util.Iterator;
 import java.util.List;
+
 import javax.swing.ImageIcon;
 import javax.swing.UIManager;
 
 import org.w3c.dom.Document;
+
+import www.wcy.wat.dsk.components.sources.FtaNodeType;
 
 import com.mxgraph.examples.swing.editor.BasicGraphEditor;
 import com.mxgraph.examples.swing.editor.EditorMenuBar;
@@ -97,7 +100,7 @@ public class GraphEditor extends BasicGraphEditor
 						GraphEditor.class
 								.getResource("/com/mxgraph/examples/swing/images/event-basic.png")),
 				"image;image=/com/mxgraph/examples/swing/images/event-basic.png",
-				50, 50, "Podstawowe");
+				50, 50, "Podstawowe", FtaNodeType.EVENT);
 		
 		eventsPalette
 		.addTemplate(
@@ -106,7 +109,7 @@ public class GraphEditor extends BasicGraphEditor
 						GraphEditor.class
 								.getResource("/com/mxgraph/examples/swing/images/event-external.png")),
 				"image;image=/com/mxgraph/examples/swing/images/event-external.png",
-				50, 50, "Zewnêtrzne");
+				50, 50, "Zewnêtrzne", FtaNodeType.EVENT);
 		
 		eventsPalette
 		.addTemplate(
@@ -115,7 +118,7 @@ public class GraphEditor extends BasicGraphEditor
 						GraphEditor.class
 								.getResource("/com/mxgraph/examples/swing/images/event-undeveloped.png")),
 				"image;image=/com/mxgraph/examples/swing/images/event-undeveloped.png",
-				50, 50, "Nierozwiniête");
+				50, 50, "Nierozwiniête", FtaNodeType.EVENT);
 		
 		eventsPalette
 		.addTemplate(
@@ -124,7 +127,7 @@ public class GraphEditor extends BasicGraphEditor
 						GraphEditor.class
 								.getResource("/com/mxgraph/examples/swing/images/event-conditioning.png")),
 				"image;image=/com/mxgraph/examples/swing/images/event-conditioning.png",
-				50, 50, "Warunkowe");
+				50, 50, "Warunkowe", FtaNodeType.EVENT);
 		
 		eventsPalette
 		.addTemplate(
@@ -133,7 +136,7 @@ public class GraphEditor extends BasicGraphEditor
 						GraphEditor.class
 								.getResource("/com/mxgraph/examples/swing/images/event-intermediate.png")),
 				"image;image=/com/mxgraph/examples/swing/images/event-intermediate.png",
-				50, 50, "Poœrednie");
+				50, 50, "Poœrednie", FtaNodeType.EVENT);
 		
 		/*
 		 * BRAMKI
@@ -146,7 +149,7 @@ public class GraphEditor extends BasicGraphEditor
 								GraphEditor.class
 										.getResource("/com/mxgraph/examples/swing/images/gate-or.png")),
 						"image;image=/com/mxgraph/examples/swing/images/gate-or.png",
-						50, 50, "OR");
+						50, 50, "OR", FtaNodeType.GATE);
 		
 		gatesPalette
 		.addTemplate(
@@ -155,7 +158,7 @@ public class GraphEditor extends BasicGraphEditor
 						GraphEditor.class
 								.getResource("/com/mxgraph/examples/swing/images/gate-and.png")),
 				"image;image=/com/mxgraph/examples/swing/images/gate-and.png",
-				50, 50, "AND");
+				50, 50, "AND", FtaNodeType.GATE);
 		
 		gatesPalette
 		.addTemplate(
@@ -164,7 +167,7 @@ public class GraphEditor extends BasicGraphEditor
 						GraphEditor.class
 								.getResource("/com/mxgraph/examples/swing/images/gate-xor.png")),
 				"image;image=/com/mxgraph/examples/swing/images/gate-xor.png",
-				50, 50, "XOR");
+				50, 50, "XOR", FtaNodeType.GATE);
 		
 		gatesPalette
 		.addTemplate(
@@ -173,7 +176,7 @@ public class GraphEditor extends BasicGraphEditor
 						GraphEditor.class
 								.getResource("/com/mxgraph/examples/swing/images/gate-and-priority.png")),
 				"image;image=/com/mxgraph/examples/swing/images/gate-and-priority.png",
-				50, 50, "AND z priorytetem");
+				50, 50, "AND z priorytetem", FtaNodeType.GATE);
 		
 		gatesPalette
 		.addTemplate(
@@ -182,7 +185,7 @@ public class GraphEditor extends BasicGraphEditor
 						GraphEditor.class
 								.getResource("/com/mxgraph/examples/swing/images/gate-inhibit.png")),
 				"image;image=/com/mxgraph/examples/swing/images/gate-inhibit.png",
-				50, 50, "Hamuj¹ca");
+				50, 50, "Hamuj¹ca", FtaNodeType.GATE);
 
 		/*
 		 * SYMBOLE PRZENIESIENIA
@@ -195,7 +198,7 @@ public class GraphEditor extends BasicGraphEditor
 						GraphEditor.class
 								.getResource("/com/mxgraph/examples/swing/images/transfer-in.png")),
 				"image;image=/com/mxgraph/examples/swing/images/transfer-in.png",
-				50, 50, "IN");
+				50, 50, "IN", FtaNodeType.TRANSFER);
 		
 		transferPalette
 		.addTemplate(
@@ -204,7 +207,7 @@ public class GraphEditor extends BasicGraphEditor
 						GraphEditor.class
 								.getResource("/com/mxgraph/examples/swing/images/transfer-out.png")),
 				"image;image=/com/mxgraph/examples/swing/images/transfer-out.png",
-				50, 50, "OUT");
+				50, 50, "OUT", FtaNodeType.TRANSFER);
 
 
 	}
