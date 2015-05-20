@@ -8,6 +8,7 @@ import www.wcy.wat.dsk.components.events.FtaEvent;
 import www.wcy.wat.dsk.components.events.IntermediateEvent;
 import www.wcy.wat.dsk.components.gates.FtaAbstractGate;
 import www.wcy.wat.dsk.components.gates.FtaGate;
+import www.wcy.wat.dsk.utils.FTAUtils;
 
 import com.mxgraph.analysis.mxAnalysisGraph;
 import com.mxgraph.model.mxCell;
@@ -128,8 +129,8 @@ public class FTAnalyzer {
 		double result = 0.0d;
 		
 		if (root instanceof FtaAbstractEvent) {
-			if(root instanceof IntermediateEvent){
-				((IntermediateEvent)root).setIntermediateProbability(aGraph);
+			if(FTAUtils.eventHasPrevoiusNode(root, aGraph)){
+				((FtaAbstractEvent)root).transitionProbabiltyFromPreviousNode(aGraph);
 			}
 			result = ((FtaAbstractEvent) root).getProbability();
 			System.out.println("Event Probability: "

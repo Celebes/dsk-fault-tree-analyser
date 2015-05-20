@@ -18,10 +18,10 @@ public class IntermediateEvent extends FtaAbstractEvent {
 		super(value, geometry, style);
 	}
 	
-	public void setIntermediateProbability(mxAnalysisGraph aGraph){
+/*	public void setIntermediateProbability(mxAnalysisGraph aGraph){
 		List<Object> children = FTAUtils.getAllChildrenForCurrentNode(this, aGraph);
 		if(!children.isEmpty()){
 			this.probability = ((FtaAbstractGate) children.get(0)).getProbability();
 		}
-	}
+	}*/
 }
