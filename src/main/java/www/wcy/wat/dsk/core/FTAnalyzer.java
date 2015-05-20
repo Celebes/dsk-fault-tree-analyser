@@ -50,7 +50,8 @@ public class FTAnalyzer {
 		}
 
 		System.out.println("korzen = " + korzen);
-		calculateFTA(currVertex, aGraph);
+		double result = calculateFTA(currVertex, aGraph);
+		JDialogHelper.showDialog(TitleType.INFO, "Results: " + result);
 
 		return false;
 	}
@@ -123,7 +124,7 @@ public class FTAnalyzer {
 	 * @param root
 	 * @param aGraph
 	 */
-	public static void calculateFTA(Object root, mxAnalysisGraph aGraph) {
+	public static double calculateFTA(Object root, mxAnalysisGraph aGraph) {
 		System.out.println("Calculate FTA");
 		System.out.println("Current Probability");
 		double result = 0.0d;
@@ -155,14 +156,8 @@ public class FTAnalyzer {
 			System.out.println(((mxCell) currentEdge).getSource());
 			calculateFTA(((mxCell) currentEdge).getSource(), aGraph);
 		}
-		
-		// SHOW RESULTS
-		int outEdgeCount = aGraph.getEdges(root, null, false, true,
-				false, true).length;
-		if (outEdgeCount == 0 && inRootEdgeCount > 0) {
-			JDialogHelper.showDialog(TitleType.INFO, "Results: " + result);
-		}
 
+		return result;
 	}
 
 }
