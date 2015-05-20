@@ -3,7 +3,7 @@ package www.wcy.wat.dsk.components.gates;
 import java.util.List;
 
 import www.wcy.wat.dsk.components.events.FtaAbstractEvent;
-import www.wcy.wat.dsk.utils.FTAUtils;
+import www.wcy.wat.dsk.utils.FTaAnalyzerUtils;
 
 import com.mxgraph.analysis.mxAnalysisGraph;
 import com.mxgraph.model.mxGeometry;
@@ -20,7 +20,7 @@ public class AndGate extends FtaAbstractGate {
 
 	public void executeLogic(mxAnalysisGraph aGraph) {
 		double andProbability = 1.0d;
-		List<Object> children = FTAUtils.getAllChildrenForCurrentNode(this, aGraph);
+		List<Object> children = FTaAnalyzerUtils.getAllChildrenForCurrentNode(this, aGraph);
 		
 		for (Object child : children) {
 			if (child instanceof FtaAbstractEvent) {

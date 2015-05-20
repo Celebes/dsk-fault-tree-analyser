@@ -9,7 +9,8 @@ import www.wcy.wat.dsk.components.events.IntermediateEvent;
 import www.wcy.wat.dsk.components.gates.FtaAbstractGate;
 import www.wcy.wat.dsk.components.gates.FtaGate;
 import www.wcy.wat.dsk.utils.CommonVariables;
-import www.wcy.wat.dsk.utils.FTAUtils;
+import www.wcy.wat.dsk.utils.FTaAnalyzerUtils;
+import www.wcy.wat.dsk.utils.GuiBuilderUtils;
 
 import com.mxgraph.analysis.mxAnalysisGraph;
 import com.mxgraph.model.mxCell;
@@ -51,64 +52,9 @@ public class FTAnalyzer {
 		}
 
 		System.out.println("korzen = " + korzen);
-		StringBuilder resultBuild = new StringBuilder();
 		double resultFta = calculateFTA(currVertex, aGraph);
-		resultBuild.append(CommonVariables.HTML_TAG_OPEN
-				+ CommonVariables.HTML_TAG_TABLE_OPEN
-				+ CommonVariables.HTML_TAG_TABLE_ROW_OPEN
-				+ CommonVariables.HTML_TAG_TABLE_COLUMN_OPEN
-				+ "FTA Result"
-				+ CommonVariables.HTML_TAG_TABLE_COLUMN_CLOSES
-				+ CommonVariables.HTML_TAG_TABLE_COLUMN_OPEN
-				+ resultFta
-				+ CommonVariables.HTML_TAG_TABLE_COLUMN_CLOSES
-				+ CommonVariables.HTML_TAG_TABLE_ROW_CLOSES);
-		
-		StringBuilder labelResult = new StringBuilder();
-		labelResult.append(CommonVariables.HTML_TAG_TABLE_ROW_OPEN);
-		labelResult.append(CommonVariables.HTML_TAG_TABLE_COLUMN_OPEN);
-		labelResult.append(CommonVariables.NODE_NAME);
-		labelResult.append(CommonVariables.HTML_TAG_TABLE_COLUMN_CLOSES);
-		labelResult.append(CommonVariables.HTML_TAG_TABLE_COLUMN_OPEN);
-		labelResult.append(CommonVariables.NODE_PROBABILITY);
-		//labelResult.append(CommonVariables.HTML_TAG_TABLE_CLOSED);
-		
-		resultBuild.append(labelResult);
-
-		for (Object vertex : vertices) {
-			if (vertex instanceof FtaAbstractEvent) {
-				StringBuilder vertexInfoRow = new StringBuilder();
-				vertexInfoRow.append(CommonVariables.HTML_TAG_TABLE_ROW_OPEN);
-				String vertexName = (String) ((mxCell) vertex).getValue();
-				String vertexProbability = ""
-						+ ((FtaAbstractEvent) vertex).getProbability();
-				vertexInfoRow.append(CommonVariables.HTML_TAG_TABLE_COLUMN_OPEN);
-				vertexInfoRow.append(vertexName);
-				vertexInfoRow.append(CommonVariables.HTML_TAG_TABLE_COLUMN_CLOSES);
-				vertexInfoRow.append(CommonVariables.HTML_TAG_TABLE_COLUMN_OPEN);	
-				vertexInfoRow.append(vertexProbability);
-				vertexInfoRow.append(CommonVariables.HTML_TAG_TABLE_COLUMN_CLOSES);
-				vertexInfoRow.append(CommonVariables.HTML_TAG_TABLE_ROW_CLOSES);
-				resultBuild.append(vertexInfoRow);
-				
-			}
-
-		}
-		
-		resultBuild.append(CommonVariables.HTML_TAG_TABLE_CLOSED);
-/*		resultBuild.append("<table border=\"1\" style=\"width:100%\">");
-		resultBuild.append("<tr>");
-		resultBuild.append("<td>Jill</td>");
-		resultBuild.append("<td>Smith</td> ");
-		resultBuild.append("<td>50</td>");
-		resultBuild.append("</tr>");
-		resultBuild.append("<tr>");
-		resultBuild.append("<td>Eve</td>");
-		resultBuild.append("<td>Jackson</td> ");
-		resultBuild.append("<td>94</td>");
-		resultBuild.append("</tr>");
-		resultBuild.append("</table>");*/
-		resultBuild.append(CommonVariables.HTML_TAG_CLOSED);
+		StringBuilder resultBuild = new StringBuilder();
+		GuiBuilderUtils.generateHTMLResultFTA(vertices, resultFta, resultBuild);
 		JDialogHelper.showDialog(TitleType.INFO, resultBuild.toString());
 
 		return false;
@@ -188,7 +134,7 @@ public class FTAnalyzer {
 		double result = 0.0d;
 
 		if (root instanceof FtaAbstractEvent) {
-			if (FTAUtils.eventHasPrevoiusNode(root, aGraph)) {
+			if (FTaAnalyzerUtils.eventHasPrevoiusNode(root, aGraph)) {
 				((FtaAbstractEvent) root)
 						.transitionProbabiltyFromPreviousNode(aGraph);
 			}

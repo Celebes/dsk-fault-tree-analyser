@@ -1,9 +1,9 @@
 package www.wcy.wat.dsk.core;
 
 public enum TitleType {
-	WARNING("Ostrze¿enie"),
-	INFO("Informacja"),
-	ERROR("B³¹d");
+	WARNING("Warning"),
+	INFO("Information"),
+	ERROR("Error");
 	
 	private String nazwa;
 	

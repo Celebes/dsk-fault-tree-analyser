@@ -3,7 +3,7 @@ package www.wcy.wat.dsk.components.events;
 import java.util.List;
 
 import www.wcy.wat.dsk.components.gates.FtaAbstractGate;
-import www.wcy.wat.dsk.utils.FTAUtils;
+import www.wcy.wat.dsk.utils.FTaAnalyzerUtils;
 
 import com.mxgraph.analysis.mxAnalysisGraph;
 import com.mxgraph.model.mxGeometry;

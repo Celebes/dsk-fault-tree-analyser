@@ -5,7 +5,7 @@ import java.util.List;
 import www.wcy.wat.dsk.components.gates.FtaAbstractGate;
 import www.wcy.wat.dsk.components.sources.FtaAbstractNode;
 import www.wcy.wat.dsk.components.sources.FtaNodeType;
-import www.wcy.wat.dsk.utils.FTAUtils;
+import www.wcy.wat.dsk.utils.FTaAnalyzerUtils;
 
 import com.mxgraph.analysis.mxAnalysisGraph;
 import com.mxgraph.model.mxGeometry;
@@ -34,7 +34,7 @@ public abstract class FtaAbstractEvent extends FtaAbstractNode implements
 	 * @param aGraph
 	 */
 	public void transitionProbabiltyFromPreviousNode(mxAnalysisGraph aGraph) {
-		List<Object> children = FTAUtils.getAllChildrenForCurrentNode(this,
+		List<Object> children = FTaAnalyzerUtils.getAllChildrenForCurrentNode(this,
 				aGraph);
 		if (!children.isEmpty()) {
 			this.probability = ((FtaAbstractGate) children.get(0))

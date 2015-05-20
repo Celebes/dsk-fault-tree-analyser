@@ -6,7 +6,7 @@ import java.util.List;
 import com.mxgraph.analysis.mxAnalysisGraph;
 import com.mxgraph.model.mxCell;
 
-public class FTAUtils {
+public class FTaAnalyzerUtils {
 
 	/**
 	 * Get all children for current node.
