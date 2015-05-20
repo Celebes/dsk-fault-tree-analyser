@@ -1,5 +1,6 @@
 package www.wcy.wat.dsk.components.gates;
 
+import com.mxgraph.analysis.mxAnalysisGraph;
 import com.mxgraph.model.mxGeometry;
 
 /*
@@ -12,7 +13,7 @@ public class InhibitGate extends FtaAbstractGate {
 		super(value, geometry, style);
 	}
 	
-	public void executeLogic() {
+	public void executeLogic(mxAnalysisGraph aGraph) {
 		
 	}
 
