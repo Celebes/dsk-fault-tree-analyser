@@ -252,11 +252,35 @@ public class EditorPalette extends JPanel
 				style);
 		
 		if(ftaNodeType == FtaNodeType.EVENT) {
-			
+			if(name.equals("Podstawowe")) {
+				
+			} else if(name.equals("Zewnêtrzne")) {
+				
+			} else if(name.equals("Nierozwiniête")) {
+				
+			} else if(name.equals("Warunkowe")) {
+				
+			} else if(name.equals("Poœrednie")) {
+				
+			}
 		} else if(ftaNodeType == FtaNodeType.GATE) {
-			
+			if(name.equals("OR")) {
+				
+			} else if(name.equals("AND")) {
+				
+			} else if(name.equals("XOR")) {
+				
+			} else if(name.equals("AND z priorytetem")) {
+				
+			} else if(name.equals("Hamuj¹ca")) {
+				
+			}
 		} else if(ftaNodeType == FtaNodeType.TRANSFER) {
-			
+			if(name.equals("IN")) {
+				
+			} else if(name.equals("OUT")) {
+				
+			}
 		}
 		
 		cell.setVertex(true);
