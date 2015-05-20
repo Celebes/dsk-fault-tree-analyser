@@ -5,6 +5,7 @@ import javax.swing.JPopupMenu;
 import javax.swing.TransferHandler;
 
 import www.wcy.wat.dsk.components.events.FtaAbstractEvent;
+import www.wcy.wat.dsk.components.sources.CustomGraphActions;
 
 import com.mxgraph.examples.swing.editor.EditorActions.HistoryAction;
 import com.mxgraph.model.mxCell;
@@ -83,7 +84,7 @@ public class EditorPopupMenu extends JPopupMenu
 		 * USTAWIANIE PRAWDOPODOBIENSTWA
 		 */
 		add(
-				editor.bind(mxResources.get("setProbability"), mxGraphActions.getEditAction())).setEnabled(probabilityCanBeSet);
+				editor.bind(mxResources.get("setProbability"), CustomGraphActions.getSetProbabilityAction())).setEnabled(probabilityCanBeSet);
 
 		/*
 		 * ------------------------------
