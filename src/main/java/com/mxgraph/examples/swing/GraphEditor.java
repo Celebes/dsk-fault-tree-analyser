@@ -75,7 +75,7 @@ public class GraphEditor extends BasicGraphEditor
 		// Creates the shapes palette
 		EditorPalette eventsPalette = insertPalette(mxResources.get("eventsPalette"));
 		EditorPalette gatesPalette = insertPalette(mxResources.get("gatesPalette"));
-		EditorPalette transferPalette = insertPalette(mxResources.get("transferPalette"));
+		//EditorPalette transferPalette = insertPalette(mxResources.get("transferPalette"));
 		
 		/*
 		 * LISTENERY
@@ -120,14 +120,14 @@ public class GraphEditor extends BasicGraphEditor
 				"image;image=/com/mxgraph/examples/swing/images/event-undeveloped.png",
 				50, 50, "Nierozwiniête", FtaNodeType.EVENT);
 		
-		eventsPalette
+		/*eventsPalette
 		.addTemplate(
 				"Warunkowe",
 				new ImageIcon(
 						GraphEditor.class
 								.getResource("/com/mxgraph/examples/swing/images/event-conditioning.png")),
 				"image;image=/com/mxgraph/examples/swing/images/event-conditioning.png",
-				50, 50, "Warunkowe", FtaNodeType.EVENT);
+				50, 50, "Warunkowe", FtaNodeType.EVENT);*/
 		
 		eventsPalette
 		.addTemplate(
@@ -169,7 +169,7 @@ public class GraphEditor extends BasicGraphEditor
 				"image;image=/com/mxgraph/examples/swing/images/gate-xor.png",
 				50, 50, "XOR", FtaNodeType.GATE);
 		
-		gatesPalette
+		/*gatesPalette
 		.addTemplate(
 				"AND z priorytetem",
 				new ImageIcon(
@@ -185,13 +185,13 @@ public class GraphEditor extends BasicGraphEditor
 						GraphEditor.class
 								.getResource("/com/mxgraph/examples/swing/images/gate-inhibit.png")),
 				"image;image=/com/mxgraph/examples/swing/images/gate-inhibit.png",
-				50, 50, "Hamuj¹ca", FtaNodeType.GATE);
+				50, 50, "Hamuj¹ca", FtaNodeType.GATE);*/
 
 		/*
 		 * SYMBOLE PRZENIESIENIA
 		 */
 		
-		transferPalette
+		/*transferPalette
 		.addTemplate(
 				"IN",
 				new ImageIcon(
@@ -207,7 +207,7 @@ public class GraphEditor extends BasicGraphEditor
 						GraphEditor.class
 								.getResource("/com/mxgraph/examples/swing/images/transfer-out.png")),
 				"image;image=/com/mxgraph/examples/swing/images/transfer-out.png",
-				50, 50, "OUT", FtaNodeType.TRANSFER);
+				50, 50, "OUT", FtaNodeType.TRANSFER);*/
 
 
 	}
