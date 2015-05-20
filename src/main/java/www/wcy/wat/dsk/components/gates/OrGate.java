@@ -1,5 +1,7 @@
 package www.wcy.wat.dsk.components.gates;
 
+import www.wcy.wat.dsk.components.events.FtaAbstractEvent;
+
 import com.mxgraph.model.mxGeometry;
 
 /*
@@ -13,7 +15,17 @@ public class OrGate extends FtaAbstractGate {
 	}
 	
 	public void executeLogic() {
-		
+		double orProbability = 0.0d;
+		double andProbability = 1.0d;
+		for(Object child : super.children){
+			if(child instanceof FtaAbstractEvent){
+				orProbability += ((FtaAbstractEvent) child).getProbability();
+				andProbability *= ((FtaAbstractEvent) child).getProbability();
+			}
+		}
+		this.setProbability(orProbability - andProbability);
+		System.out.println("Wyliczono prawd. bramki OR = " + getProbability()
+				+ " z liczb¹ wejœæ = " + super.getChildCount());
 	}
 	
 }
