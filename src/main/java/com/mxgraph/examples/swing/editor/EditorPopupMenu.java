@@ -4,7 +4,10 @@ import javax.swing.JMenu;
 import javax.swing.JPopupMenu;
 import javax.swing.TransferHandler;
 
+import www.wcy.wat.dsk.components.events.FtaAbstractEvent;
+
 import com.mxgraph.examples.swing.editor.EditorActions.HistoryAction;
+import com.mxgraph.model.mxCell;
 import com.mxgraph.swing.util.mxGraphActions;
 import com.mxgraph.util.mxResources;
 
@@ -20,6 +23,20 @@ public class EditorPopupMenu extends JPopupMenu
 	{
 		boolean selected = !editor.getGraphComponent().getGraph()
 				.isSelectionEmpty();
+		
+		boolean oneSelected = (editor.getGraphComponent().getGraph().getSelectionCount() == 1);
+		
+		boolean probabilityCanBeSet = false;
+		
+		if(selected && oneSelected) {
+			Object selectedCell = editor.getGraphComponent().getGraph().getSelectionCell();
+			if(selectedCell instanceof FtaAbstractEvent) {
+				mxCell mxSelectedCell = (mxCell) selectedCell;
+				if(mxSelectedCell.getEdgeCount() == 1) {
+					probabilityCanBeSet = true;		// ustaw p-stwo tylko dla lisci
+				}
+			}
+		}
 
 		add(editor.bind(mxResources.get("undo"), new HistoryAction(true),
 				"/com/mxgraph/examples/swing/images/undo.gif"));
@@ -59,7 +76,18 @@ public class EditorPopupMenu extends JPopupMenu
 		menu = (JMenu) add(new JMenu(mxResources.get("shape")));
 
 		EditorMenuBar.populateShapeMenu(menu, editor);
+		
+		addSeparator();
+		
+		/*
+		 * USTAWIANIE PRAWDOPODOBIENSTWA
+		 */
+		add(
+				editor.bind(mxResources.get("setProbability"), mxGraphActions.getEditAction())).setEnabled(probabilityCanBeSet);
 
+		/*
+		 * ------------------------------
+		 */
 		addSeparator();
 
 		add(

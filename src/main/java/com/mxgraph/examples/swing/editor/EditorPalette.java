@@ -26,7 +26,19 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.TransferHandler;
 
+import www.wcy.wat.dsk.components.events.BasicEvent;
+import www.wcy.wat.dsk.components.events.ConditioningEvent;
+import www.wcy.wat.dsk.components.events.ExternalEvent;
+import www.wcy.wat.dsk.components.events.IntermediateEvent;
+import www.wcy.wat.dsk.components.events.UndevelopedEvent;
+import www.wcy.wat.dsk.components.gates.AndGate;
+import www.wcy.wat.dsk.components.gates.AndPriorityGate;
+import www.wcy.wat.dsk.components.gates.InhibitGate;
+import www.wcy.wat.dsk.components.gates.OrGate;
+import www.wcy.wat.dsk.components.gates.XorGate;
 import www.wcy.wat.dsk.components.sources.FtaNodeType;
+import www.wcy.wat.dsk.components.transfer.TransferIn;
+import www.wcy.wat.dsk.components.transfer.TransferOut;
 
 import com.mxgraph.model.mxCell;
 import com.mxgraph.model.mxGeometry;
@@ -247,39 +259,38 @@ public class EditorPalette extends JPanel
 	 */
 	public void addTemplate(final String name, ImageIcon icon, String style,
 			int width, int height, Object value, FtaNodeType ftaNodeType)
-	{
-		mxCell cell = new mxCell(value, new mxGeometry(0, 0, width, height),
-				style);
+	{		
+		mxCell cell = null;
 		
 		if(ftaNodeType == FtaNodeType.EVENT) {
 			if(name.equals("Podstawowe")) {
-				
+				cell = new BasicEvent(value, new mxGeometry(0, 0, width, height), style);
 			} else if(name.equals("Zewnêtrzne")) {
-				
+				cell = new ExternalEvent(value, new mxGeometry(0, 0, width, height), style);
 			} else if(name.equals("Nierozwiniête")) {
-				
+				cell = new UndevelopedEvent(value, new mxGeometry(0, 0, width, height), style);
 			} else if(name.equals("Warunkowe")) {
-				
+				cell = new ConditioningEvent(value, new mxGeometry(0, 0, width, height), style);
 			} else if(name.equals("Poœrednie")) {
-				
+				cell = new IntermediateEvent(value, new mxGeometry(0, 0, width, height), style);
 			}
 		} else if(ftaNodeType == FtaNodeType.GATE) {
 			if(name.equals("OR")) {
-				
+				cell = new OrGate(value, new mxGeometry(0, 0, width, height), style);
 			} else if(name.equals("AND")) {
-				
+				cell = new AndGate(value, new mxGeometry(0, 0, width, height), style);
 			} else if(name.equals("XOR")) {
-				
+				cell = new XorGate(value, new mxGeometry(0, 0, width, height), style);
 			} else if(name.equals("AND z priorytetem")) {
-				
+				cell = new AndPriorityGate(value, new mxGeometry(0, 0, width, height), style);
 			} else if(name.equals("Hamuj¹ca")) {
-				
+				cell = new InhibitGate(value, new mxGeometry(0, 0, width, height), style);
 			}
 		} else if(ftaNodeType == FtaNodeType.TRANSFER) {
 			if(name.equals("IN")) {
-				
+				cell = new TransferIn(value, new mxGeometry(0, 0, width, height), style);
 			} else if(name.equals("OUT")) {
-				
+				cell = new TransferOut(value, new mxGeometry(0, 0, width, height), style);
 			}
 		}
 		
