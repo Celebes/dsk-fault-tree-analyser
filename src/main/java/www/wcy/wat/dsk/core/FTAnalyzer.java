@@ -147,13 +147,6 @@ public class FTAnalyzer {
 		int inRootEdgeCount = inRootEdges.length;
 		System.out.println("root cell = " + (mxCell) root + " | in= "
 				+ inRootEdgeCount);
-		
-		// SHOW RESULTS
-		int outEdgeCount = aGraph.getEdges(root, null, false, true,
-				false, true).length;
-		if (outEdgeCount == 0 && inRootEdgeCount > 0) {
-			JDialogHelper.showDialog(TitleType.INFO, "Results: " + result);
-		}
 
 		for (Object currentEdge : inRootEdges) {
 			System.out.println((mxCell) currentEdge);
@@ -162,6 +155,12 @@ public class FTAnalyzer {
 			calculateFTA(((mxCell) currentEdge).getSource(), aGraph);
 		}
 		
+		// SHOW RESULTS
+		int outEdgeCount = aGraph.getEdges(root, null, false, true,
+				false, true).length;
+		if (outEdgeCount == 0 && inRootEdgeCount > 0) {
+			JDialogHelper.showDialog(TitleType.INFO, "Results: " + result);
+		}
 
 	}
 
