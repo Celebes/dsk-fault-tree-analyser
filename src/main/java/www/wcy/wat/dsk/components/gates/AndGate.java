@@ -25,7 +25,6 @@ public class AndGate extends FtaAbstractGate {
 		for (Object child : children) {
 			if (child instanceof FtaAbstractEvent) {
 				andProbability *= ((FtaAbstractEvent) child).getProbability();
-				System.out.println("and temp: " + andProbability);
 			}
 		}
 		this.setProbability(andProbability);

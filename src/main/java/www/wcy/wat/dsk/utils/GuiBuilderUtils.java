@@ -22,19 +22,27 @@ public class GuiBuilderUtils {
 		message.append(CommonVariables.HTML_TAG_OPEN
 				+ CommonVariables.HTML_TAG_TABLE_OPEN
 				+ CommonVariables.HTML_TAG_TABLE_ROW_OPEN
-				+ CommonVariables.HTML_TAG_TABLE_COLUMN_OPEN + "FTA Result"
-				+ CommonVariables.HTML_TAG_TABLE_COLUMN_CLOSES
+				+ CommonVariables.HTML_TAG_TABLE_COLUMN_OPEN
+				+ CommonVariables.HTML_TAG_STRONG_OPEN
+				+ CommonVariables.FTA_RESULT
+				+ CommonVariables.HTML_TAG_STRONG_CLOSED
+				+ CommonVariables.HTML_TAG_TABLE_COLUMN_CLOSED
 				+ CommonVariables.HTML_TAG_TABLE_COLUMN_OPEN + resultFTA
-				+ CommonVariables.HTML_TAG_TABLE_COLUMN_CLOSES
-				+ CommonVariables.HTML_TAG_TABLE_ROW_CLOSES);
+				+ CommonVariables.HTML_TAG_TABLE_COLUMN_CLOSED
+				+ CommonVariables.HTML_TAG_TABLE_ROW_CLOSED);
 
 		StringBuilder labelResult = new StringBuilder();
 		labelResult.append(CommonVariables.HTML_TAG_TABLE_ROW_OPEN);
 		labelResult.append(CommonVariables.HTML_TAG_TABLE_COLUMN_OPEN);
+		labelResult.append(CommonVariables.HTML_TAG_STRONG_OPEN);
 		labelResult.append(CommonVariables.NODE_NAME);
-		labelResult.append(CommonVariables.HTML_TAG_TABLE_COLUMN_CLOSES);
+		labelResult.append(CommonVariables.HTML_TAG_STRONG_CLOSED);
+		labelResult.append(CommonVariables.HTML_TAG_TABLE_COLUMN_CLOSED);
 		labelResult.append(CommonVariables.HTML_TAG_TABLE_COLUMN_OPEN);
+		labelResult.append(CommonVariables.HTML_TAG_STRONG_OPEN);
 		labelResult.append(CommonVariables.NODE_PROBABILITY);
+		labelResult.append(CommonVariables.HTML_TAG_STRONG_CLOSED);
+
 		// labelResult.append(CommonVariables.HTML_TAG_TABLE_CLOSED);
 
 		message.append(labelResult);
@@ -50,13 +58,13 @@ public class GuiBuilderUtils {
 						.append(CommonVariables.HTML_TAG_TABLE_COLUMN_OPEN);
 				vertexInfoRow.append(vertexName);
 				vertexInfoRow
-						.append(CommonVariables.HTML_TAG_TABLE_COLUMN_CLOSES);
+						.append(CommonVariables.HTML_TAG_TABLE_COLUMN_CLOSED);
 				vertexInfoRow
 						.append(CommonVariables.HTML_TAG_TABLE_COLUMN_OPEN);
 				vertexInfoRow.append(vertexProbability);
 				vertexInfoRow
-						.append(CommonVariables.HTML_TAG_TABLE_COLUMN_CLOSES);
-				vertexInfoRow.append(CommonVariables.HTML_TAG_TABLE_ROW_CLOSES);
+						.append(CommonVariables.HTML_TAG_TABLE_COLUMN_CLOSED);
+				vertexInfoRow.append(CommonVariables.HTML_TAG_TABLE_ROW_CLOSED);
 				message.append(vertexInfoRow);
 
 			}

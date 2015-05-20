@@ -13,15 +13,9 @@ import com.mxgraph.model.mxGeometry;
  */
 public class IntermediateEvent extends FtaAbstractEvent {
 	private static final long serialVersionUID = 4968404833127810326L;
-	
+
 	public IntermediateEvent(Object value, mxGeometry geometry, String style) {
 		super(value, geometry, style);
 	}
-	
-/*	public void setIntermediateProbability(mxAnalysisGraph aGraph){
-		List<Object> children = FTAUtils.getAllChildrenForCurrentNode(this, aGraph);
-		if(!children.isEmpty()){
-			this.probability = ((FtaAbstractGate) children.get(0)).getProbability();
-		}
-	}*/
+
 }

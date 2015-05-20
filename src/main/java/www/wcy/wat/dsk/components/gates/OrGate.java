@@ -27,8 +27,6 @@ public class OrGate extends FtaAbstractGate {
 			if(child instanceof FtaAbstractEvent){
 				orProbability += ((FtaAbstractEvent) child).getProbability();
 				andProbability *= ((FtaAbstractEvent) child).getProbability();
-				System.out.println("or temp: " + orProbability);
-				System.out.println("and temp: " + andProbability);
 			}
 		}
 		this.setProbability(orProbability - andProbability);
