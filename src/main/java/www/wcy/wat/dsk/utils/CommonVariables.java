@@ -4,9 +4,9 @@ package www.wcy.wat.dsk.utils;
  * Created by Krzysztof Jedynak on 2015-05-18.
  */
 public class CommonVariables {
-	public static final String NODE_NAME = "Event Name: ";
+	public static final String NODE_NAME = "Event Name";
 	public static final String FTA_RESULT = "FTA Result";
-	public static final String NODE_PROBABILITY = "Event Probability: ";
+	public static final String NODE_PROBABILITY = "Event Probability";
 	public static final String HTML_TAG_OPEN = "<html>";
 	public static final String HTML_NEWLINE = "</br>";
 	public static final String HTML_TAG_CLOSED = "</html>";

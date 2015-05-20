@@ -1,6 +1,7 @@
 package www.wcy.wat.dsk.utils;
 
 import www.wcy.wat.dsk.components.events.FtaAbstractEvent;
+import www.wcy.wat.dsk.core.FTAnalyzer;
 
 import com.mxgraph.model.mxCell;
 
@@ -27,7 +28,8 @@ public class GuiBuilderUtils {
 				+ CommonVariables.FTA_RESULT
 				+ CommonVariables.HTML_TAG_STRONG_CLOSED
 				+ CommonVariables.HTML_TAG_TABLE_COLUMN_CLOSED
-				+ CommonVariables.HTML_TAG_TABLE_COLUMN_OPEN + resultFTA
+				+ CommonVariables.HTML_TAG_TABLE_COLUMN_OPEN
+				+ FTaAnalyzerUtils.roundProbabilityForView(resultFTA)
 				+ CommonVariables.HTML_TAG_TABLE_COLUMN_CLOSED
 				+ CommonVariables.HTML_TAG_TABLE_ROW_CLOSED);
 
@@ -53,7 +55,9 @@ public class GuiBuilderUtils {
 				vertexInfoRow.append(CommonVariables.HTML_TAG_TABLE_ROW_OPEN);
 				String vertexName = (String) ((mxCell) vertex).getValue();
 				String vertexProbability = ""
-						+ ((FtaAbstractEvent) vertex).getProbability();
+						+ FTaAnalyzerUtils
+								.roundProbabilityForView(((FtaAbstractEvent) vertex)
+										.getProbability());
 				vertexInfoRow
 						.append(CommonVariables.HTML_TAG_TABLE_COLUMN_OPEN);
 				vertexInfoRow.append(vertexName);

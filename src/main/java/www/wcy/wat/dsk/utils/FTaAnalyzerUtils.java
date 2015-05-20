@@ -1,5 +1,7 @@
 package www.wcy.wat.dsk.utils;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,6 +47,18 @@ public class FTaAnalyzerUtils {
 			return true;
 		else
 			return false;
+
+	}
+
+	/**
+	 * Round primitive double probability for view.
+	 * 
+	 * @param probability
+	 * @return
+	 */
+	public static String roundProbabilityForView(double probability) {
+		BigDecimal roundedProbability = new BigDecimal(probability).setScale(5, RoundingMode.HALF_DOWN);
+		return roundedProbability.toString();
 
 	}
 }
